@@ -4,6 +4,9 @@
 @tailwind utilities;
 
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-ui); }
+.tenant-loading-screen { min-height:100vh; display:grid; place-items:center; background:var(--paper); }
+.tenant-loading-screen img { width:84px; height:84px; }
+[data-theme="dark"] .tenant-loading-screen { background:var(--paper); }
 button, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
 button:disabled { cursor: not-allowed; opacity: .55; }
@@ -39,6 +42,7 @@ th, td { padding:12px; border-bottom:1px solid var(--border); }
 .fo-header-inner { min-height:68px; display:flex; align-items:center; gap:18px; }
 .fo-logo { display:flex; align-items:center; gap:9px; font-size:18px; font-weight:750; text-decoration:none; white-space:nowrap; }
 .fo-logo-mark { width:32px; height:32px; display:grid; place-items:center; border-radius:10px; background:var(--fo-brand-tint); color:var(--fo-brand); }
+.fo-logo-mark img { width:22px; height:22px; }
 .fo-nav { display:flex; flex:1; gap:20px; margin-left:8px; }
 .fo-nav a { color:var(--fo-muted); font-size:14px; font-weight:550; text-decoration:none; }
 .fo-nav a:hover { color:var(--fo-text); }
@@ -127,7 +131,8 @@ img.fo-avatar { object-fit:cover; }
 
 /* Patient portal v1.5 */
 .portal-topbar { min-height:64px; display:flex; align-items:center; gap:28px; padding:8px 24px; border-bottom:1px solid var(--border); background:var(--surface); }
-.portal-brand { display:flex; flex-direction:column; line-height:1.2; white-space:nowrap; }
+.portal-brand { display:flex; align-items:center; gap:9px; line-height:1.2; white-space:nowrap; }
+.portal-brand img { width:92px; height:auto; }
 .portal-brand span { font-size:14px; font-weight:750; }
 .portal-brand small { color:var(--ink-muted); }
 .portal-desktop-nav { display:flex; align-self:stretch; align-items:center; gap:5px; }
@@ -374,6 +379,24 @@ img.fo-avatar { object-fit:cover; }
   .cms-hours { grid-template-columns:80px 26px minmax(0, 1fr); }
   .cms-icon-picker { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
+
+/* Shared light/dark theme for tenant surfaces. */
+[data-theme="dark"] .fo-site,
+[data-theme="dark"] .staff-auth,
+[data-theme="dark"] .platform-admin { background:var(--paper); color:var(--ink); }
+[data-theme="dark"] .fo-site { --fo-bg:var(--paper); --fo-surface:var(--surface); --fo-surface-2:#122019; --fo-border:var(--border); --fo-text:var(--ink); --fo-muted:var(--ink-muted); }
+[data-theme="dark"] .portal-topbar,
+[data-theme="dark"] .portal-account-menu,
+[data-theme="dark"] .staff-auth-card,
+[data-theme="dark"] .platform-topbar,
+[data-theme="dark"] .platform-sidebar,
+[data-theme="dark"] .platform-kpis article { background:var(--surface); border-color:var(--border); color:var(--ink); }
+[data-theme="dark"] .staff-auth-intro p,
+[data-theme="dark"] .platform-topbar > span,
+[data-theme="dark"] .platform-sidebar a,
+[data-theme="dark"] .platform-sidebar p { color:var(--ink-muted); }
+[data-theme="dark"] .platform-sidebar a:hover,
+[data-theme="dark"] .platform-sidebar a[aria-current="page"] { background:var(--sage-tint); color:var(--sage-deep); }
 
 @media (max-width:720px) {
   .fo-location-section { grid-template-columns:1fr; }

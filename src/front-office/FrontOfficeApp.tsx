@@ -163,7 +163,7 @@ export default function FrontOfficeApp({ tenant }: { tenant: TenantContext }) {
     void load();
   }, []);
 
-  if (view.type === "loading") return <p className="p-8">Loading clinic…</p>;
+  if (view.type === "loading") return <div className="tenant-loading-screen" role="status" aria-label="Loading clinic"><img src="/assets/dhmis-logo-v2/svg/dhmis-loader-light.svg" alt="" /></div>;
   if (view.type === "error")
     return (
       <p className="p-8" role="alert">

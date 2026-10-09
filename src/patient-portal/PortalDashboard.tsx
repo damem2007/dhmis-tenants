@@ -158,7 +158,7 @@ export function PatientPortalDashboard({
     <div className="min-h-screen bg-[var(--paper)] font-[var(--font-ui)] text-[var(--ink)]">
       {/* Top bar */}
       <header className="portal-topbar">
-        <div className="portal-brand"><span>{clinicName}</span><small>Client Portal</small></div>
+        <div className="portal-brand"><img src="/assets/dhmis-logo-v2/svg/dhmis-lockup-website.svg" alt="DHMIS" /><span>{clinicName}</span><small>Client Portal</small></div>
         <nav className="portal-desktop-nav" aria-label="Client Portal">
           <button aria-current={activePanel === "home" ? "page" : undefined} onClick={() => onNavigate?.("home")}>Home</button>
           {bookingEnabled && <button aria-current={activePanel === "book" ? "page" : undefined} onClick={() => onNavigate?.("book")}>Appointments</button>}

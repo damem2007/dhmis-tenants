@@ -92,7 +92,7 @@ export function FrontOfficeHome({
       <header className="fo-header">
         <div className="fo-wrap fo-header-inner">
           <a className="fo-logo" href="#top" aria-label={`${clinicName} home`}>
-            <span className="fo-logo-mark"><Sparkles size={17} /></span>
+            <span className="fo-logo-mark"><img src="/assets/dhmis-logo-v2/svg/dhmis-mark.svg" alt="DHMIS" /></span>
             {clinicName}
           </a>
           <nav className="fo-nav" aria-label="Clinic website">

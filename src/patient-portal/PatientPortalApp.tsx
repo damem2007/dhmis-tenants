@@ -420,7 +420,7 @@ export default function PatientPortalApp({ tenant }: { tenant: TenantContext }) 
     }
   }
 
-  if (view.type === 'loading') return <p className="p-8">Loading Client Portal…</p>;
+  if (view.type === 'loading') return <div className="tenant-loading-screen" role="status" aria-label="Loading Client Portal"><img src="/assets/dhmis-logo-v2/svg/dhmis-loader-light.svg" alt="" /></div>;
   if (view.type === 'error') return <p className="p-8" role="alert">{view.message}</p>;
   if (view.type === 'login' || view.type === 'accept' || view.type === 'activate' || view.type === 'verify') {
     const title = view.type === 'login' ? 'Client Portal' : view.type === 'accept' ? 'Use a clinic invitation' : view.type === 'activate' ? 'Activate or access your account' : 'Enter verification code';

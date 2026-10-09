@@ -50,7 +50,7 @@ function TenantWeb() {
   }, [path]);
 
   if (error) return <main className="mx-auto max-w-lg p-8"><div className="panel"><h1 className="text-xl font-semibold">DHMIS clinic route unavailable</h1><p className="mt-2 text-sm">{error}</p></div></main>;
-  if (!tenant) return <p className="p-8">Resolving clinic…</p>;
+  if (!tenant) return <div className="tenant-loading-screen" role="status" aria-label="Loading clinic"><img src="/assets/dhmis-logo-v2/svg/dhmis-loader-light.svg" alt="" /></div>;
   return tenant.surface === 'portal' ? <PatientPortalApp tenant={tenant} /> : <FrontOfficeApp tenant={tenant} />;
 }
 
